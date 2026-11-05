@@ -1,7 +1,7 @@
 # 🎓 UniSphere (1-Portal) — One Campus, One Portal
 
-[![Deploy UniSphere to GitHub Pages](https://github.com/KKrishnaCharan111/1---Portal/actions/workflows/deploy.yml/badge.svg)](https://github.com/KKrishnaCharan111/1---Portal/actions/workflows/deploy.yml)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-4f46e5?logo=github)](https://kkrishnacharan111.github.io/1---Portal/)
+[![Deploy UniSphere to GitHub Pages](https://github.com/KKrishnaCharan111/1_Portal/actions/workflows/deploy.yml/badge.svg)](https://github.com/KKrishnaCharan111/1_Portal/actions/workflows/deploy.yml)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-4f46e5?logo=github)](https://kkrishnacharan111.github.io/1_Portal/)
 
 > **UniSphere** is a next-generation, full-stack college management portal built with **React 18 + Vite + TypeScript + Tailwind CSS** on the frontend, powered by **Supabase (PostgreSQL, Auth, Storage, Edge Functions, Realtime)** on the backend, and hosted static-first on **GitHub Pages**.
 
@@ -9,7 +9,7 @@
 
 ## 🌐 Live URL & Instant Demo Mode
 
-- **Live Production URL:** [https://kkrishnacharan111.github.io/1---Portal/](https://kkrishnacharan111.github.io/1---Portal/)
+- **Live Production URL:** [https://kkrishnacharan111.github.io/1_Portal/](https://kkrishnacharan111.github.io/1_Portal/)
 - **Zero-Config Instant Demo Mode:** If Supabase environment keys are not configured, UniSphere automatically boots in an **interactive Demo Mode** with a full in-memory & persistent offline database store. Anyone can test all features, submit assignments, scan QR codes, pay fees, and view role dashboards immediately without setting up a backend!
 
 ---
@@ -66,46 +66,15 @@ You can click any of the 1-click role buttons on the login screen or in the top 
 
 ---
 
-## ⚙️ Manual Steps Checklist for the Project Owner
+## ⚙️ How to Activate GitHub Pages (1-Click)
 
-To link this repository to your live Supabase cloud project and deploy automatically:
-
-### 1. Create Supabase Project
-1. Log in to [supabase.com](https://supabase.com) and create a new project named `unisphere-portal`.
-2. Go to **SQL Editor** in the Supabase Dashboard.
-3. Paste and run the contents of `supabase/migrations/20261105000000_unisphere_schema.sql`.
-4. Paste and run the contents of `supabase/seed.sql` to populate demo data.
-
-### 2. Configure GitHub Pages Deployment
-1. Open your repository on GitHub: [https://github.com/KKrishnaCharan111/1---Portal](https://github.com/KKrishnaCharan111/1---Portal).
-2. Go to **Settings** > **Pages**.
-3. Under **Build and deployment** > **Source**, select **GitHub Actions**.
-
-### 3. Add GitHub Repository Secrets
-1. In your GitHub repository, go to **Settings** > **Secrets and variables** > **Actions**.
-2. Click **New repository secret** and add:
-   - `VITE_SUPABASE_URL`: Your Supabase Project URL (`https://xyzcompany.supabase.co`)
-   - `VITE_SUPABASE_ANON_KEY`: Your Supabase Anonymous Public Key (`eyJhbGci...`)
-
-### 4. Deploy Supabase Edge Functions (Optional for Cloud AI & Live Razorpay)
-1. Install Supabase CLI: `npm i -g supabase`
-2. Link your project: `supabase link --project-ref your-project-id`
-3. Set secrets:
-   ```bash
-   supabase secrets set GEMINI_API_KEY=your_gemini_api_key
-   supabase secrets set RAZORPAY_KEY_SECRET=your_rzp_secret
-   ```
-4. Deploy the functions:
-   ```bash
-   supabase functions deploy ai-assistant
-   supabase functions deploy qr-attendance
-   supabase functions deploy create-payment
-   ```
-
-### 5. Configure Google OAuth Redirect URL (Optional)
-1. In your Supabase Dashboard, navigate to **Authentication** > **URL Configuration**.
-2. Under **Redirect URLs**, add: `https://kkrishnacharan111.github.io/1---Portal/`
-3. Under **Authentication** > **Providers**, enable **Google** with your Google Cloud Client ID and Secret.
+1. Open your repository on GitHub:
+   👉 **[https://github.com/KKrishnaCharan111/1_Portal/settings/pages](https://github.com/KKrishnaCharan111/1_Portal/settings/pages)**
+2. Under **Build and deployment** > **Branch**:
+   - Select Branch: **`main`**
+   - Select Folder: **`/docs`** *(or select branch `gh-pages`)*
+   - Click **Save**.
+3. In ~30 seconds, your portal is live at **[https://kkrishnacharan111.github.io/1_Portal/](https://kkrishnacharan111.github.io/1_Portal/)**!
 
 ---
 
@@ -113,8 +82,8 @@ To link this repository to your live Supabase cloud project and deploy automatic
 
 ```bash
 # Clone the repository
-git clone https://github.com/KKrishnaCharan111/1---Portal.git
-cd 1---Portal
+git clone https://github.com/KKrishnaCharan111/1_Portal.git
+cd 1_Portal
 
 # Install dependencies
 npm install
@@ -134,7 +103,7 @@ npm run build
 ## 🧪 Testing Verification Report
 
 - **Vitest Unit Tests**: 11 / 11 passing (`src/__tests__/auth.test.ts`, `src/__tests__/attendance.test.ts`, `src/__tests__/fees.test.ts`, `src/__tests__/rls.test.ts`).
-- **Build Output**: Clean static distribution in `dist/` with base path `/1---Portal/` and `404.html` fallback.
+- **Build Output**: Clean static distribution in `dist/` and `docs/` with base path `/1_Portal/` and `404.html` fallback.
 - **All 6 Role Dashboards**: Verified with role-specific views and permission guards.
 - **PDF Generation**: Verified for Hall Tickets, Fee Receipts, and Resumes.
 

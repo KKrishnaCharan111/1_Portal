@@ -20,7 +20,7 @@ port = 54323
 [auth]
 enabled = true
 site_url = "http://127.0.0.1:3000"
-additional_redirect_urls = ["https://kkrishnacharan111.github.io/1---Portal/"]
+additional_redirect_urls = ["https://kkrishnacharan111.github.io/1_Portal/", "https://kkrishnacharan111.github.io/1---Portal/"]
 jwt_expiry = 3600
 enable_signup = true
 
